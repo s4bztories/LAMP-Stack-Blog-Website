@@ -1,0 +1,151 @@
+:root {
+    --bg-dark: #05070a;
+    --accent: #7c3aed;
+    --accent-glow: rgba(124, 58, 237, 0.5);
+    --text-dim: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Split Screen Layout */
+.split-screen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+@media (max-width: 900px) {
+    .split-screen { grid-template-columns: 1fr; }
+    .left-panel { display: none; }
+}
+
+/* Left Panel Styling */
+.left-panel {
+    background: radial-gradient(circle at 30% 30%, #1e1b4b 0%, #05070a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+}
+
+.moon-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    filter: blur(150px);
+    opacity: 0.2;
+    top: 20%;
+    left: 20%;
+}
+
+.visual-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.visual-content h1 span { color: var(--accent); }
+
+.explore-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.explore-link:hover { border-color: var(--accent); letter-spacing: 1px; }
+
+/* Right Panel / Form Styling */
+.right-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0c10;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.form-header h2 { font-size: 2rem; margin-bottom: 10px; }
+.form-header p { color: var(--text-dim); margin-bottom: 40px; }
+
+/* Floating Labels Logic */
+.floating-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.floating-group input, .floating-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #1e293b;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.floating-group label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--text-dim);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.floating-group input:focus ~ label,
+.floating-group input:not(:placeholder-shown) ~ label,
+.floating-group textarea:focus ~ label,
+.floating-group textarea:not(:placeholder-shown) ~ label {
+    top: -18px;
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+.floating-group input:focus, .floating-group textarea:focus {
+    border-color: var(--accent);
+}
+
+/* Unique Button */
+.glow-button {
+    width: 100%;
+    padding: 16px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.glow-button:hover {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 30px var(--accent-glow);
+}

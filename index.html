@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonLight | Express Yourself</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="split-screen">
+        <section class="left-panel">
+            <div class="visual-content">
+                <div class="moon-glow"></div>
+                <h1>MoonLight<span>.</span></h1>
+                <p>The night is where the best stories are written. Share your thoughts under the digital glow.</p>
+                <a href="hello.html" class="explore-link">Explore the Dark →</a>
+            </div>
+        </section>
+
+        <section class="right-panel">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Create a Post</h2>
+                    <p>Enter your details below to join the narrative.</p>
+                </div>
+
+                <form action="submit.php" method="POST" class="modern-form">
+                    <div class="floating-group">
+                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
+                    </div>
+
+                    <div class="floating-group">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email">Email Address</label>
+                    </div>
+
+                    <div class="floating-group">
+                        <textarea id="blog" name="blog" rows="1" placeholder=" " required></textarea>
+                        <label for="blog">Write your story...</label>
+                    </div>
+
+                    <button type="submit" class="glow-button">
+                        <span>Publish Thought</span>
+                        <div class="button-glow"></div>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
