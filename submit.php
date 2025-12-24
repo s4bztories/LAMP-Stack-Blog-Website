@@ -4,14 +4,13 @@ require_once 'config.php';
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect post data
-    $name = $_POST['stud_name'];
-    $email = $_POST['stud_email'];
-    $blog = $_POST['blog'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
     // Prepare and bind (Secure way to prevent SQL injection)
-    $stmt = $conn->prepare("INSERT INTO students (name, email, blog_content) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $blog);
-
+    $stmt = $conn->prepare("INSERT INTO posts (name, email, message) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $name, $email, $message);
     // Execute the query
     if ($stmt->execute()) {
         echo "<h3>New record created successfully!</h3>";
