@@ -3,7 +3,7 @@ config.php -- <?php
 $servername = "localhost";
 $username = "root";       // Default XAMPP username
 $password = "";           // Default XAMPP password is empty
-$dbname = "moonlight";    // The name of your database
+$dbname = "moonlight_db";    // The name of your database
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
